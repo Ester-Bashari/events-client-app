@@ -1,0 +1,10 @@
+@use "utils" as *;
+
+.app-header {
+  @include flexDisplay(row, center, space-between, 1rem);
+  height: $header-height;
+
+  .logo {
+    cursor: pointer;
+  }
+}

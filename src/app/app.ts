@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {Header} from './components/header/header';
+import {RouterOutlet} from '@angular/router';
+import {Spinner} from './components/spinner/spinner';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Header, RouterOutlet, Spinner],
   templateUrl: './app.html',
+  standalone: true,
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('events-client-app');
 }

@@ -1,0 +1,31 @@
+<div class="account-area">
+  <mat-icon>account_circle</mat-icon>
+
+  @if (userData) {
+    <div class="user-menu-wrapper">
+      <div class="user-menu-header"
+           [matMenuTriggerFor]="userMenu"
+           #userMenuTrigger="matMenuTrigger">
+        שלום {{ userData.fullName }}
+        <mat-icon>
+          {{ userMenuTrigger.menuOpen ? 'expand_less' : 'expand_more' }}
+        </mat-icon>
+      </div>
+
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item [routerLink]="'events/create'">
+          <mat-icon class="material-symbols-outlined">calendar_add_on</mat-icon>
+          <span>צור אירוע</span>
+        </button>
+
+        <button mat-menu-item (click)="logout()">
+          <mat-icon class="material-symbols-outlined">chip_extraction</mat-icon>
+          <span>יציאה</span>
+        </button>
+      </mat-menu>
+    </div>
+  } @else {
+    <span class="login"
+          (click)="openLoginDialog()">התחברות</span>
+  }
+</div>

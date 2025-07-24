@@ -1,0 +1,10 @@
+@use "utils" as *;
+
+.start-text {
+  @include flexDisplay(column, center, center, 1.5rem);
+  min-height: calc(100% - #{$header-height});
+  background-image: url('/images/planet.jpg');
+  background-blend-mode: soft-light;
+  background-size: cover;
+  text-align: center;
+}

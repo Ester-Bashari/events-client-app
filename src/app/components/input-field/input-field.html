@@ -1,0 +1,26 @@
+<mat-form-field appearance="fill">
+  @if (configs.label) {
+    <mat-label>{{ configs.label }}</mat-label>
+  }
+
+  <input matInput
+         [type]="type"
+         [formControl]="control"
+         [required]="configs.isRequired"
+         [attr.autocomplete]="configs.autocomplete"/>
+
+  @if (configs.type == InputType.PASSWORD) {
+    <button mat-icon-button
+            matSuffix
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="'Toggle password visibility'"
+            [attr.aria-pressed]="!hidePassword"
+            type="button">
+      <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+  }
+
+  @for (errorKey of getKeys(control.errors); track errorKey) {
+    <mat-error>{{ configs.validators[errorKey].message }}</mat-error>
+  }
+</mat-form-field>

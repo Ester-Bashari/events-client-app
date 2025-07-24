@@ -1,0 +1,24 @@
+@use "utils" as *;
+@use "bootstrap";
+
+//backdrop
+.dark-dialog-backdrop {
+  background-color: $dark-transparent-bg;
+}
+
+//size
+*[mat-dialog-md] {
+  width: $dialog-size-md;
+}
+
+//elements
+*[mat-dialog-title] {
+  @include flexDisplay(row, center, flex-start, .25);
+  @extend .py-2, .border-bottom;
+}
+
+mat-dialog-content {
+  @extend .mt-4, .fs-6, .lh-base;
+  white-space: pre-line;
+}
+

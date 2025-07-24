@@ -1,0 +1,14 @@
+@use "utils" as *;
+
+.account-area {
+  @include flexDisplay(row, center, flex-start, .5rem);
+  cursor: pointer;
+  color: $dark-purple;
+
+  .user-menu-wrapper {
+    .user-menu-header {
+      @include flexDisplay(row, center, flex-start, .25rem);
+      cursor: pointer;
+    }
+  }
+}
