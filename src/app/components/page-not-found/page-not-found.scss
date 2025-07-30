@@ -1,0 +1,17 @@
+@use "utils" as *;
+
+.not-found-container {
+  @include flexDisplay(column, center, center, 1.5rem);
+  min-height: calc(100% - #{$header-height});
+  background-image: url('/images/planet.jpg');
+  background-blend-mode: soft-light;
+  background-size: cover;
+  text-align: center;
+
+  .astronaut {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    animation: float 10s ease-in-out infinite;
+  }
+}
